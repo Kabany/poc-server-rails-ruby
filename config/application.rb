@@ -23,5 +23,8 @@ module PocServerRailsRuby
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Custom global variable across environments
+    config.app_version = "1.0.0"
   end
 end

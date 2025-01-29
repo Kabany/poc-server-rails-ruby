@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get "/meta/ping", controller: "meta", action: :ping
+  get "/meta/health-check", controller: "meta", action: :health_check
+  get "/meta/version", controller: "meta", action: :version
 
 end

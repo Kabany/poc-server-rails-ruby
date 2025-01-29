@@ -9,6 +9,6 @@ class MetaController < ApplicationController
     end
 
     def version
-      render json: SuccessResponse(nil, "OK!")
+      render json: SuccessResponse(nil, Rails.configuration.app_version)
     end
 end
