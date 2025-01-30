@@ -3,17 +3,13 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
   helper_method :SuccessResponse
 
-  def SuccessResponse(data, message=nil, force=false)
+  def SuccessResponse(data, message=nil)
     @data = {success: true}
-    if force
-      @data = {data: data, message: message, success: true}
-    else
-      if data != nil
-        @data["data"] = data
-      end
-      if message != nil
-        @data["message"] = message
-      end
+    if data != nil
+      @data["data"] = data
+    end
+    if message != nil
+      @data["message"] = message
     end
     return @data
   end
