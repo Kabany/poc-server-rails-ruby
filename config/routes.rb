@@ -16,4 +16,11 @@ Rails.application.routes.draw do
   get "/meta/health-check", controller: "meta", action: :health_check
   get "/meta/version", controller: "meta", action: :version
 
+  get "/operations/list/params/:times", controller: "operations", action: :send_list_from_params
+  get "/operations/list/query", controller: "operations", action: :send_list_from_query
+  post "/operations/list/body", controller: "operations", action: :send_list_from_body
+  get "/operations/list/headers", controller: "operations", action: :send_list_from_headers
+
+  get "/operations/fibonacci/sum/:number", controller: "operations", action: :send_fibonacci_sum
+  get "/operations/fibonacci/list/:number", controller: "operations", action: :send_fibonacci_list
 end
