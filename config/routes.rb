@@ -23,4 +23,8 @@ Rails.application.routes.draw do
 
   get "/operations/fibonacci/sum/:number", controller: "operations", action: :send_fibonacci_sum
   get "/operations/fibonacci/list/:number", controller: "operations", action: :send_fibonacci_list
+
+  post "/auth/jwt/string", controller: "auth", action: :send_jwt_token
+  post "/auth/hash/string", controller: "auth", action: :send_hash
+  post "/auth/totp/string", controller: "auth", action: :send_totp_code
 end

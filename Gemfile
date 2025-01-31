@@ -53,6 +53,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem 'jwt', '~> 2.10', '>= 2.10.1'
+  gem "rotp"
 end
 
 group :development do

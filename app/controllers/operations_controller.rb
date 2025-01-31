@@ -32,12 +32,12 @@ class OperationsController < ApplicationController
   def send_fibonacci_sum
     @num = Integer(params[:number])
     @sum = fibonacci_sum(@num)
-    render json: SuccessResponse(@sum)
+    render json: SuccessResponse({sum: @sum})
   end
 
   def send_fibonacci_list
     @num = Integer(params[:number])
-    @sum = fibonacci_list(@num)
-    render json: SuccessResponse(@sum)
+    @list = fibonacci_list(@num)
+    render json: SuccessResponse({list: @list})
   end
 end
