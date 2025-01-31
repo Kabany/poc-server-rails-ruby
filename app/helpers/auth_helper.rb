@@ -9,4 +9,8 @@ module AuthHelper
   def validate_jwt_token(token)
     return JWT.decode(token, FIRST_JWT_SECRET, true, {algorithm: "HS256"})[0]["message"]
   end
+
+  def create_hash(text)
+    return Digest::SHA2.new(512).hexdigest(text)
+  end
 end
