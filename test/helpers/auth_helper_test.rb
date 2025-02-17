@@ -17,6 +17,8 @@ class AuthHelperTest < ActiveSupport::TestCase
 
     # VALIDATE JWT FROM NODEJS
     assert_equal(@decoded, validate_jwt_token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.IuiP9G4uZRbreQi4qWaZFlZMnvEtHig0AmYx-8NT7Q4"))
+    # VALIDATE JWT FROM Swift
+    assert_equal(@decoded, validate_jwt_token("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.mahh4kwbMrH_-7Np_G88KLJmkW5GtFYzbLiWAfpRiJQ"))
   end
 
   test "Should create a Hash token from a simple string using the SHA512 Hex algorithm" do
