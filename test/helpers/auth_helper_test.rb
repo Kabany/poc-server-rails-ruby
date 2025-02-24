@@ -6,7 +6,7 @@ class AuthHelperTest < ActiveSupport::TestCase
   test "Should create a JWT token from a simple string using the default algorithm HS256" do
     @message = "Hello World!"
     @token = create_jwt_from_string(@message)
-    assert_equal("eyJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.kiLVWiCroYBS-sgSmTP_u74OmiLt_l3UeUBGfM-lmE8", @token)
+    assert_equal("eyJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.yX3llK_oxmp-qhJ7l-B0AL8wOlzCzsDHlw7xtCU2d4s", @token)
   end
 
   test "Should create a JWT token, then decode it and must match with the original message" do
@@ -15,10 +15,10 @@ class AuthHelperTest < ActiveSupport::TestCase
     @decoded = validate_jwt_token(@token)
     assert_equal(@message, @decoded)
 
-    # VALIDATE JWT FROM NODEJS
-    assert_equal(@decoded, validate_jwt_token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.IuiP9G4uZRbreQi4qWaZFlZMnvEtHig0AmYx-8NT7Q4"))
-    # VALIDATE JWT FROM Swift
-    assert_equal(@decoded, validate_jwt_token("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.mahh4kwbMrH_-7Np_G88KLJmkW5GtFYzbLiWAfpRiJQ"))
+    # From JavaScript, C# & Java/Kotlin
+    assert_equal(@decoded, validate_jwt_token("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.q_OAmeTO_BJ0X1_6SMzGEat8qHvcMZ6LtPhLg8yKXR4"))
+    # From Swift
+    assert_equal(@decoded, validate_jwt_token("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSGVsbG8gV29ybGQhIn0.Qn62lWxZ5VZKovUbE8KTu_xGeDSp739uapAuBDK360Y"))
   end
 
   test "Should create a Hash token from a simple string using the SHA512 Hex algorithm" do
